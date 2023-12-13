@@ -16,11 +16,7 @@ class Storage {
   }
 
   removeItem(itemToRemove) {
-    for (const [index, iterator] of this.#items.entries()) {
-      if (iterator === itemToRemove) {
-        this.#items.splice(index, 1);
-      }
-    }
+    this.#items = this.#items.filter(item => item !== itemToRemove);
   }
 }
 
